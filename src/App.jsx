@@ -2,30 +2,17 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
-
-npm
-
-const MyComponent = () => {
-  return (
-    <div> eric & hoidanit</div>
-  );
-}
+import MyComponent from './components/learn/MyComponents'
+import SecondComponent from './components/learn/SecondComponent'
 
 
 const App = () => {
   const [count, setCount] = useState(0)
 
-
-  const myfunction = () => {
-    console.log(">>> run arrow function")
-  }
-
-  myfunction();
-
   return (
     <>
       <div>
+
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -34,6 +21,10 @@ const App = () => {
         </a>
       </div>
       <h1>Hello word</h1>
+
+      <MyComponent />
+      <SecondComponent />
+
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
