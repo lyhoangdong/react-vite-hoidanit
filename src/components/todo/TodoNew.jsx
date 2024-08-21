@@ -6,7 +6,8 @@ const TodoNew = (props) => {
     const [valueInput, setValueInput] = useState("eric")
     //addNewTodo("Eric")
     const handleClick = () => {
-        addNewTodo(valueInput)
+        addNewTodo(valueInput);
+        setValueInput("");
     }
 
     const handleOnChange = (name) => {
@@ -19,6 +20,7 @@ const TodoNew = (props) => {
             <input type="text" placeholder='Enter your task'
                 style={{ fontSize: '16px', borderRadius: '5px' }}
                 onChange={(event) => handleOnChange(event.target.value)}
+                value={valueInput}
             />
             <button
                 style={{
