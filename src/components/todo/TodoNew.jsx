@@ -6,12 +6,10 @@ const TodoNew = (props) => {
     const [valueInput, setValueInput] = useState("eric")
     //addNewTodo("Eric")
     const handleClick = () => {
-        //alert("Click me");
-        console.log(">>> Check value input: ", valueInput)
+        addNewTodo(valueInput)
     }
 
     const handleOnChange = (name) => {
-
         setValueInput(name)
     }
 
