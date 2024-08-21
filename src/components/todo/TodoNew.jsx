@@ -1,4 +1,10 @@
-const TodoNew = () => {
+const TodoNew = (props) => {
+    console.log(">>> Check props", props)
+    const { addNewTodo } = props
+
+    //addNewTodo("Eric")
+
+
     return (
         <div>
             <input type="text" placeholder='Enter your task'
