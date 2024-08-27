@@ -1,4 +1,4 @@
-import { Drawer } from "antd";
+import { Button, Drawer } from "antd";
 
 const ViewUserDetail = (props) => {
     const { dataDetail,
@@ -8,7 +8,9 @@ const ViewUserDetail = (props) => {
     } = props;
 
     return (
-        <Drawer title="Chi tiết User"
+        <Drawer
+            width={"30vw"}
+            title="Chi tiết User"
             onClose={() => {
                 setDataDetail(null);
                 setIsDetailOpen(false);
@@ -24,7 +26,29 @@ const ViewUserDetail = (props) => {
                 <br />
                 <p>Phone number: {dataDetail.phone}</p>
                 <br />
-            </> :
+                <p>Avatar:</p>
+                <div>
+                    <img height={150} width={250}
+                        src={`${import.meta.env.VITE_BACKEND_URL}/images/avatar/${dataDetail.avatar}`} />
+                </div>
+                <div>
+                    <label htmlFor="btnUpload" style={{
+                        display: "block",
+                        width: "fit-content",
+                        marginTop: "15px",
+                        padding: "5px 10px",
+                        background: "orange",
+                        borderRadius: "5px",
+                        cursor: "pointer"
+
+                    }}>
+                        Upload Avatar
+                    </label>
+                    <input type='file' hidden id="btnUpload" />
+                </div>
+                {/* <Button type='primary'> Update avatar </Button> */}
+            </>
+                :
                 <>
                     <p>Không có dữ liệu</p>
                 </>
