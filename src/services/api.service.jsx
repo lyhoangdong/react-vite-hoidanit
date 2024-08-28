@@ -23,8 +23,8 @@ const updateUserAPI = (_id, fullName, phone) => {
     //console.log(">>>Check state: ", { fullName, email, password, phone });
 }
 
-const fetchAllUSerAPI = () => {
-    const URL_BACKEND = "/api/v1/user?current=1&pageSize=1";
+const fetchAllUSerAPI = (current, pageSize) => {
+    const URL_BACKEND = `/api/v1/user?current=${current}&pageSize=${pageSize}`;
     return axios.get(URL_BACKEND);
 }
 
