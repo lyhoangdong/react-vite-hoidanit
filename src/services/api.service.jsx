@@ -70,7 +70,17 @@ const registerUserAPI = (fullName, email, password, phone) => {
     //console.log(">>>Check state: ", { fullName, email, password, phone });
 }
 
+const loginAPI = (email, password) => {
+    const URL_BACKEND = "/api/v1/auth/login";
+    const data = {
+        username: email,
+        password: password,
+        //delay: 5000
+    }
+    return axios.post(URL_BACKEND, data);
+
+}
 export {
     createUserAPI, updateUserAPI, fetchAllUSerAPI,
-    deleteUSerAPI, handleUploadFile, updateUserAvatarAPI, registerUserAPI
+    deleteUSerAPI, handleUploadFile, updateUserAvatarAPI, registerUserAPI, loginAPI
 }
